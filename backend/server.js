@@ -9,7 +9,14 @@ app.use(express.json());
 
 // Routes
 const roomRoutes = require('./routes/roomRoutes');
+const clientRoutes = require('./routes/clientRoutes');
+const reservationRoutes = require('./routes/reservationRoutes');
+const paymentRoutes = require('./routes/paymentRoutes');
+
 app.use('/api/rooms', roomRoutes);
+app.use('/api/clients', clientRoutes);
+app.use('/api/reservations', reservationRoutes);
+app.use('/api/payments', paymentRoutes);
 
 // Gestion des erreurs
 app.use((err, req, res, next) => {
